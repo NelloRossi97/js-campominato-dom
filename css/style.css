@@ -18,6 +18,7 @@ main{
 .field{
     width: 500px;
     height: 500px;
+    background-image: url(../img/grass.png);
 }
 
 .square{
@@ -31,11 +32,18 @@ main{
 }
 
 .right-choice{
-    background-color: green;
+    background-color: transparent;
+    background-image: url('../img/flower0.png');
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .bomb{
     background-color: red;
+}
+
+.bomb-img{
     background-image: url('../img/bomb.png');
     background-size: 80%;
     background-position: center;
@@ -45,4 +53,7 @@ main{
 .square span{
     opacity: 0;
 }
+
+
+
 

@@ -2,6 +2,17 @@
 function play(e){
     //resetto il refresh del bottone submit
     e.preventDefault();
+    let images=['../img/flower0.png',
+            '../img/flower1.png',
+            '../img/flower2.png',
+            '../img/flower3.png',
+            '../img/flower4.png',
+            '../img/flower5.png'];
+
+let randomNumber = getRndInteger(0,5);
+let bgImg = 'url(' + images[randomNumber] + ')';
+
+
     //prendo il campo di gioco e lo resetto
     let field = document.querySelector('.field');
     field.innerHTML = "";
@@ -17,8 +28,6 @@ function play(e){
     let gameOver = false;
     //prendo il contenitore del punteggio
     const scoreBox = document.getElementById('score');
-
-    let win = 0;
 
     //uso uno switch per determinare il numero di caselle da creare
     switch(level){
@@ -52,7 +61,7 @@ function play(e){
             let bombValue = parseInt(square.innerText);
             // console.log(bombValue);
             //controllo se nell'array di bombe c'è il numero cliccato
-            win = squareNumbers - parseInt(bombs.length);
+            let win = squareNumbers - parseInt(bombs.length);
             //scelgo se applicare la classe bomba o scelta giusta
             if (!gameOver && !square.classList.contains('right-choice')){
                if (bombs.includes(bombValue)){
@@ -62,7 +71,7 @@ function play(e){
                     <h4 class="text-center">Premi Gioca per ricominciare</h4>`;
                     showBombs(bombs);
                 } else{
-                    square.classList.add('right-choice');
+                    square.classList.add('right-choice' , bgImg);
                     score++;
                     scoreBox.innerHTML = `<h3>Il tuo punteggio è ${score}</h3>`;
                 }
