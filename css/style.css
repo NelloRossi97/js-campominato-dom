@@ -54,6 +54,8 @@ main{
     opacity: 0;
 }
 
-
+main{
+    background-image: url('../img/big-grass.png');
+}
 
 

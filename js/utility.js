@@ -17,7 +17,7 @@ function play(e){
     let gameOver = false;
     //prendo il contenitore del punteggio
     const scoreBox = document.getElementById('score');
-
+    
     //uso uno switch per determinare il numero di caselle da creare
     switch(level){
         case 'easy':
@@ -56,18 +56,18 @@ function play(e){
                if (bombs.includes(bombValue)){
                     square.classList.add('bomb');
                     gameOver = true;
-                    scoreBox.innerHTML = `<h3 class="text-center">Hai perso! il tuo punteggio è ${score}</h3>
-                    <h4 class="text-center">Premi Gioca per ricominciare</h4>`;
+                    scoreBox.innerHTML = `<h3 class="text-white fs-1 fw-bold">Hai perso! il tuo punteggio è ${score}</h3>
+                    <h4 class="text-white fw-bold">Premi Gioca per ricominciare</h4>`;
                     showBombs(bombs);
                 } else{
                     square.classList.add('right-choice');
                     score++;
-                    scoreBox.innerHTML = `<h3>Il tuo punteggio è ${score}</h3>`;
+                    scoreBox.innerHTML = `<h3 class="text-white fs-1 fw-bold">Il tuo punteggio è ${score}</h3>`;
                 }
             }
             if (score === win){
                 gameOver = true;
-                scoreBox.innerHTML = `<h3>Complimenti! Hai vinto! Il tuo punteggio è ${score}</h3>`;
+                scoreBox.innerHTML = `<h3 class="text-white fs-1 fw-bold">Complimenti! Hai vinto! Il tuo punteggio è ${score}</h3>`;
             }
             
             
