@@ -2,17 +2,6 @@
 function play(e){
     //resetto il refresh del bottone submit
     e.preventDefault();
-    let images=['../img/flower0.png',
-            '../img/flower1.png',
-            '../img/flower2.png',
-            '../img/flower3.png',
-            '../img/flower4.png',
-            '../img/flower5.png'];
-
-let randomNumber = getRndInteger(0,5);
-let bgImg = 'url(' + images[randomNumber] + ')';
-
-
     //prendo il campo di gioco e lo resetto
     let field = document.querySelector('.field');
     field.innerHTML = "";
@@ -71,7 +60,7 @@ let bgImg = 'url(' + images[randomNumber] + ')';
                     <h4 class="text-center">Premi Gioca per ricominciare</h4>`;
                     showBombs(bombs);
                 } else{
-                    square.classList.add('right-choice' , bgImg);
+                    square.classList.add('right-choice');
                     score++;
                     scoreBox.innerHTML = `<h3>Il tuo punteggio è ${score}</h3>`;
                 }
